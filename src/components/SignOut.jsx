@@ -1,12 +1,8 @@
-import React from "react";
-import { auth } from "../firebase/firebaseConfig";
+import React, { useContext } from "react";
+import { DataContext } from "../context/context";
 
 const SignOut = () => {
-  const handleClick = (e) => {
-    e.preventDefault();
-    auth.signOut();
-    console.log("You have sign out");
-  };
+const { handleClick } = useContext(DataContext);
 
   return (
     <div>

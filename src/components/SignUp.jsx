@@ -1,24 +1,14 @@
-import React, { useState } from "react";
-import { auth } from "../firebase/firebaseConfig";
+import React, { useContext } from "react";
+import { DataContext } from "../context/context";
 
 const SignUp = () => {
-  const [user, setUser] = useState({ email: "", password: "" });
-
-  const handleChange = (e) => {
-    e.preventDefault();
-    setUser({ ...user, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    auth.createUserWithEmailAndPassword(user.email, user.password).then();
-  };
+  const {  handleSubmitUp, handleChange  } = useContext(DataContext);;
 
   return (
     <div>
       <div>
         <h1>Sign Up</h1>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmitUp}>
           <input
             type="email"
             name="email"
