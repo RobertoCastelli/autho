@@ -1,14 +1,15 @@
-import React, { useContext } from "react";
-import { DataContext } from "../context/context";
+import React, { useContext } from "react"
+import { DataContext } from "../context/context"
 
 const SignOut = () => {
-const { handleClick } = useContext(DataContext);
+	const { handleClick, state } = useContext(DataContext)
 
-  return (
-    <div>
-      <button onClick={handleClick}>Sign Out</button>
-    </div>
-  );
-};
+	return (
+		<div className='sign-out'>
+			<button onClick={handleClick}>Sign Out</button>
+			<p>{state}</p>
+		</div>
+	)
+}
 
-export default SignOut;
+export default SignOut
